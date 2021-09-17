@@ -5,10 +5,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+/*
+Plans to table: 
+-add alarm clock with actual time
+-add flowers to flowerpot
+*/
 @font-face {
-    font-family: league-spartan;
-    src: url(./LeagueSpartan-Bold.otf);
+    font-family: Monaco;
+    src: url(./Monaco.woff);
+}
+
+:root {
+    /*
+    --prim: #E43F6F;
+    --sec: #040303;
+    --ter: #F56476;
+    --qua: #F8E5EE;
+    */
+    
+    --prim: #FF5733;
+    --sec: #87cfeba8;
+    --ter: rgb(199, 167, 63);
+    --qua: rgb(199, 199, 63);
+    --r-off: 30px;
 }
 
 html {
@@ -22,29 +42,39 @@ body {
 }
 
 #intro-section {
-    background-color: black;
+    position: relative;
+    background-color: var(--sec);
 }
 
 header {
     position: absolute;
-    top: 5px;
+    top: 0px;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: fit-content;
+    margin: 0%;
+    padding: 0px;
+    z-index: 2;
 }
 
 header ul {
     display: flex;
     position: absolute;
-    right: 25px;
+    top: 0%;
+    right: 0px;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    margin: 0;
+    margin-right: 20px;
 }
 
 header ul li {
     list-style-type: none;
     height: fit-content;
-    margin: 0 20px;
-    padding: 5px;
+    margin: 0;
     width: fit-content;
+    padding: 20px 30px;
 }
 
 header ul li a{
@@ -54,7 +84,7 @@ header ul li a{
 header ul li a:before {
     content: '';
     position: absolute;
-    background-color: rgb(214, 143, 36);
+    background-color: var(--qua);
     left: 0;
     bottom: 0;
     width: 100%;
@@ -67,10 +97,10 @@ header ul li a:before {
 header ul li a {
     position: relative;
     display: inline-block;
-    font-family: 'Lora', serif;
+    font-family: Monaco;
     font-weight: 400;
     font-size: 30px;
-    color: rgb(155, 155, 155);
+    color: var(--prim);
     text-decoration: none;
 }
 
@@ -101,7 +131,7 @@ header h1 {
 section {
     width: 100vw;
     height: 100vh;
-
+    position: relative;
     margin: 0;
 }
 
@@ -116,29 +146,29 @@ section {
 }
 
 #name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 20px;
 }
 
-#name h1 {
-    color: rgb(214, 143, 36);
-    font-family: 'Open Sans';
-    font-size: 70px;
-    margin-bottom: 20px;
+#name div {
+    color: var(--qua);
+    font-family: Monaco;
+    font-size: 40px;
+    margin-top: 20px;
     padding: 0;
+    display: flex;
+    align-items: flex-end;
 }
 
 #name p {
-    color: rgb(155, 155, 155);
-    font-family: Lora, serif;
-    font-size: 30px;
+    color: var(--ter);
+    font-weight: 700;
+    font-family: Monaco;
+    font-size: 80px;
     margin: 0;
     padding: 0;
 }
@@ -146,17 +176,17 @@ section {
 #arrow {
     position: absolute;
     left: 50%;
-    bottom: 20px;
     transform: translate(-50%, 0%);
-    color: rgb(155, 155, 155);
-    font-size: 100px;
+    color: rgb(82, 82, 82);
+    font-size: 80px;
     margin: 0;
     padding: 0%;
     animation: move 3s ease-in-out 0s infinite;
 }
 
 #about-section {
-    background-color: white;
+    background-color: black;
+    height: fit-content;
 }
 
 .pics-text-split {
@@ -169,7 +199,7 @@ section {
 
 .pics-text-split .text{
     width: 60%;
-    font-family: 'Open Sans';
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 30px;
@@ -184,14 +214,292 @@ section {
 
 @keyframes move {
     0% {
-        bottom: 20px;
+        bottom: 10px;
     }
 
     50% {
-        bottom: 60px;
+        bottom: 50px;
     }
 
     100% {
-        bottom: 20px;
+        bottom: 10px;
     }
+}
+
+#diff-text {
+    padding-right: 7px;
+}
+
+.blink {
+    animation: blink 1.5s ease-in-out 0.5s infinite;
+}
+
+#blinker {
+    width: 2px;
+    height: 40px;
+    background-color: var(--qua);
+    position: relative;
+    bottom: 4px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+}
+
+#intro-card {
+    width: 80%;
+    height: 90%;
+    box-shadow: 0px 2px 10px rgb(82, 82, 82);
+    background-color: black;
+    border-radius: 20px;
+}
+
+#left {
+    width: 35%;
+    height: 100%;
+}
+
+#right {
+    width: 60%;
+    height: 100%;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    align-items: flex-end;
+    top: 0px;
+    left: 0%;
+    transform: translate(-0%, 0%);
+    margin: 0%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 5px solid rgb(94, 55, 10);
+}
+
+.right-name {
+    width: 80%;
+    height: auto;
+}
+
+.right-name img {
+    width: 60%;
+    height: auto;
+    margin-left: 100px;
+}
+
+#terminal {
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#laptop {
+    position: relative;
+    left: 50px;
+    bottom: -9%; /*4.5% for every 10% scale decrease*/
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    transform: scale(0.8);
+    margin: 0%;
+    padding: 0%;
+}
+
+#outside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #c0c0c0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    z-index: 2;
+}
+
+#screen {
+    position: relative;
+    width: calc(100% - 50px);
+    height: calc(100% - 60px);
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: #5a5d7a;
+}
+
+#stand {
+    width: 50px;
+    height: 80px;
+    background-color: #c0c0c0;
+    margin: 0;
+    padding: 0;
+    transform: translate(-25%, 0);
+}
+
+#podium {
+    position: relative;
+    width: 140px;
+    height: 30px;
+    background-color: #c0c0c0;
+    margin: 0;
+    padding: 0;
+    transform: translate(-13px, 0);
+    z-index: 1;
+}
+
+#logo {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-28px, 0);
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#paintbox {
+    position: absolute;
+    left: 280px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+#tab {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background-color: black;
+    left: 70%;
+    top: -2px;
+}
+
+#top {
+    background-color: #d8d8d8;
+    width: 70px;
+    height: 7px;
+    border-radius: 5px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #e71f33;
+    width:70px;
+    height: 120px;
+    border-radius: 5px;
+}
+
+#strip {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    width: 10px;
+    height: 100%;
+    background-color: white;
+}
+
+#flowerpot {
+    position: absolute;
+    right: 70px;
+    transform: translateY(4px);
+}
+
+#flowers {
+    position: absolute;
+    bottom: 115px;
+    right: 0px;
+    z-index: 1;
+}
+
+#pot {
+    position: relative;
+    z-index: 2;
+}
+
+#books {
+    position: absolute;
+    left: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book {
+    position: relative;
+    width: 180px;
+    height: 25px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.book::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+}
+
+#book1 {
+    position: relative;
+    left: 20px;
+    background-color: lightpink;
+}
+
+#book2 {
+    background-color: lightgreen;
+    position: relative;
+    right: 10px;
+}
+
+#book3 {
+    background-color: lightsalmon;
+}
+
+#sun {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fdfbd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
