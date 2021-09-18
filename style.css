@@ -16,6 +16,12 @@ Plans to table:
     src: url(./Monaco.woff);
 }
 
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
 :root {
     /*
     --prim: #E43F6F;
@@ -84,7 +90,7 @@ header ul li a{
 header ul li a:before {
     content: '';
     position: absolute;
-    background-color: var(--qua);
+    background-color: rgb(252, 252, 112);
     left: 0;
     bottom: 0;
     width: 100%;
@@ -138,10 +144,10 @@ section {
 .section-title {
     font-size: 70px;
     width: fit-content;
-    font-family: Lora;
+    font-family: Monaco;
     font-weight: 700;
-    color:rgb(214, 143, 36);
-    margin: 20px 0 0 20px;
+    color:var(--prim);
+    margin: 10px 0 15px 20px;
 
 }
 
@@ -186,7 +192,7 @@ section {
 }
 
 #about-section {
-    background-color: black;
+    background-color: #ffffff;
     height: fit-content;
 }
 
@@ -306,14 +312,6 @@ section {
     width: 60%;
     height: auto;
     margin-left: 100px;
-}
-
-#terminal {
-    width: 80vw;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-
 }
 
 #laptop {
@@ -503,4 +501,97 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#terminal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#close-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #dddada;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.bar-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#red {
+    background-color: #FF605C;
+    margin-left: 15px;
+}
+
+#yellow {
+    background-color: #FFBD44;
+}
+
+#green {
+    background-color: #00CA4E;
+}
+
+#info-area {
+    width: 100%;
+    margin: 0;
+    height: fit-content;
+    background-color: rgb(143, 170, 204);
+    padding: 20px;
+    padding-bottom: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.statement {
+    font-size: 18px;
+    font-family: Monaco;
+}
+
+.inp-s {
+    color: white;
+}
+
+.ret-s {
+    color: rgb(247, 219, 59);
+    margin-top: 3px;
+}
+
+.inp-s::before {
+    content: '> ';
+    font-size: 18px;
+    font-family: Monaco;
+}
+
+#terminal-blinker {
+    width: 10px;
+    height: 18px;
+    background-color: white;
+    animation: t-blink 1.2s ease-in-out 0s infinite;
+}
+
+@keyframes t-blink {
+    0% { opacity: 1; }
+     49.999% { opacity: 1; }
+     50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+#info-area a {
+    color: rgb(138, 74, 109);
+    text-decoration: none;
 }
