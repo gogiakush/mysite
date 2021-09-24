@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     setUpText();
-    setUpCanvas();
+    setUpBurger();
 });
 let len = 1;
 let index = 0;
@@ -49,4 +49,18 @@ function setUpCanvas() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#000000";
     ctx.fillRect(20, 20, canvas.width-1800, canvas.height-60);
+}
+
+function setUpBurger() {
+    document.querySelector('#burger').onclick = () => {
+        document.querySelector('#burger').classList.toggle('b-active');
+        document.querySelector('header').classList.toggle('h-active');
+    }
+
+    document.querySelectorAll('.head-link').forEach((hLink) => {
+        hLink.onclick = () => {
+            document.querySelector('#burger').classList.remove('b-active');
+            document.querySelector('header').classList.remove('h-active');
+        }
+    });
 }

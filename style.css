@@ -136,7 +136,7 @@ header h1 {
 
 section {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     margin: 0;
 }
@@ -580,14 +580,14 @@ section {
 #terminal-blinker {
     width: 10px;
     height: 18px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     animation: t-blink 1.2s ease-in-out 0s infinite;
 }
 
 @keyframes t-blink {
     0% { opacity: 1; }
-     49.999% { opacity: 1; }
-     50% { opacity: 0; }
+    49.999% { opacity: 1; }
+    50% { opacity: 0; }
     100% { opacity: 0; }
 }
 
@@ -595,3 +595,66 @@ section {
     color: rgb(21, 233, 169);
     text-decoration: none;
 }
+
+#projects-section {
+    margin-top: 70px;
+    background-color: var(--sec);
+}
+
+#burger {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.b-line {
+    width: 50px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #FF5733;
+    transition: 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    #burger {
+        visibility: visible;
+        z-index: 101;
+    }
+
+    .b-active .b-line:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+    }
+
+    .b-active .b-line:nth-child(2) {
+        transform: rotate(-45deg) translateY(-10px);
+    }
+
+    header ul {
+        visibility: hidden;
+    }
+
+    .h-active ul {
+        visibility: visible;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.425);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    #paintbox, #flowerpot, #books {
+        visibility: hidden;
+    }
+
+    
+}
+
