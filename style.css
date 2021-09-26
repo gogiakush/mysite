@@ -640,6 +640,8 @@ section {
 
     .h-active ul {
         visibility: visible;
+        margin: 0;
+        padding: 0;
         top: 0;
         left: 0;
         width: 100vw;
@@ -652,10 +654,13 @@ section {
     }
 
     .h-active ul li {
+        max-width: fit-content;
         padding-top: 0;
         padding-bottom: 60px;
         padding-left: 0;
         padding-right: 0;
+        margin: 0;
+        transform: translateX(-10px);
     }
 
     #paintbox, #flowerpot, #books {
@@ -680,11 +685,11 @@ section {
     }
 
     #info-area {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     #about-section {
-        height: fit-content;
+        max-height: fit-content;
     }
 }
 
