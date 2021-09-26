@@ -644,17 +644,44 @@ section {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.425);
+        background-color: rgba(255, 255, 255, 0.582);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 100;
     }
 
+    .h-active ul li {
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+
     #paintbox, #flowerpot, #books {
         visibility: hidden;
     }
 
-    
+    .container {
+        height: 70vh;
+    }
+
+    #laptop {
+        left: 0;
+    }
+
+    #name p {
+        font-size: 60px;
+    }
+
+    #terminal {
+        width: 95vw;
+    }
+
+    #info-area {
+        margin-bottom: 20px;
+    }
+
+    #about-section {
+        height: fit-content;
+    }
 }
 
