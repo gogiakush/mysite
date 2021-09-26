@@ -654,6 +654,8 @@ section {
     .h-active ul li {
         padding-top: 0;
         padding-bottom: 60px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     #paintbox, #flowerpot, #books {
@@ -666,7 +668,7 @@ section {
 
     #laptop {
         left: 0;
-        width: 122vw;
+        width: 202vw;
     }
 
     #name p {
