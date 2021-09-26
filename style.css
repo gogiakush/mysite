@@ -666,6 +666,7 @@ section {
 
     #laptop {
         left: 0;
+        width: 95%;
     }
 
     #name p {
