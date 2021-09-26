@@ -668,7 +668,7 @@ section {
 
     #laptop {
         left: 0;
-        width: 202vw;
+        min-width: 122vw;
     }
 
     #name p {
