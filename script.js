@@ -1,12 +1,13 @@
 window.addEventListener('DOMContentLoaded', () => {
     setUpText();
     setUpBurger();
+    checkButtonClick();
 });
 let len = 1;
 let index = 0;
 let reachEnd = false;
 let nex = 70;
-words = ["Web Designer", "Software Engineer", "Problem Solver", "Innovator"];
+let words = ["Web Designer", "Software Engineer", "Problem Solver", "Innovator"];
 function setUpText() {
     let word = words[index];
     document.querySelector('#diff-text').innerHTML = word.substring(0, len);
@@ -63,4 +64,20 @@ function setUpBurger() {
             document.querySelector('header').classList.remove('h-active');
         }
     });
+}
+
+function checkButtonClick() {
+    document.querySelector('#red').onclick = () => {
+        $('#info-area').slideUp(500, function() {
+            
+                setUpGame();
+            
+          });
+    }
+
+    document.querySelector('#green').onclick = () => {
+        $('#info-area').slideDown(500, function() {
+                document.querySelector('#terminal').removeChild(document.querySelector('canvas'));
+          });
+    }
 }

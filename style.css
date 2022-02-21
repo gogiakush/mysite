@@ -508,14 +508,15 @@ section {
     left: 50%;
     transform: translateX(-50%);
     width: 65vw;
-    height: fit-content;
+    min-height: 800px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 #close-bar {
     width: 100%;
-    height: 30px;
+    min-height: 30px;
     background-color: #dddada;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -530,6 +531,23 @@ section {
     height: 15px;
     border-radius: 50%;
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-let {
+    color: black;
+    font-family: Monaco;
+    font-size: 15px;
+    font-weight: 600;
+    visibility: hidden;
+    margin-bottom: 2px;
+}
+
+.bar-button:hover .button-let {
+    visibility: visible;
 }
 
 #red {
@@ -555,6 +573,7 @@ section {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-bottom: 40px;
+    z-index: 1;
 }
 
 .statement {
